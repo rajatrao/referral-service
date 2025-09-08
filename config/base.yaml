@@ -9,6 +9,6 @@ redis:
   address: "127.0.0.1:6379"
 
 postgres:
-  db_name: "referral"
-  user: "user_1"
-  password: "referral_123"
+  db_name: "referral db name"
+  user: "your_user"
+  password: "password"
