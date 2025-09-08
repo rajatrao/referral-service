@@ -1,0 +1,14 @@
+server:
+  address: ${SERVE_ADDR:127.0.0.1:5000}
+
+cache:
+  interval: 30
+  duration: second
+
+redis:
+  address: "127.0.0.1:6379"
+
+postgres:
+  db_name: "referral"
+  user: "user_1"
+  password: "referral_123"
