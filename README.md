@@ -3,12 +3,36 @@ Referral Service App
 A microservice designed to manage referral program, program membership and member referrals.
 Generate and validate referral codes to track referral progress.
 
+Business Use case
+=================
+- Use the program apis to create referral program say for your new product
+- Enroll your partners as members to referral program
+  - this generates a unique referral code for program member
+- Your partners can use this referral code add their referral in the system
+- When the referral takes action like creating account or making purchase, the program reward rules evaluates the action and triggers the reward
+- Once reward is triggered the system will issue a payout to member / referral based on their preference (ex. paypal transaction or tango card)
+
 Features
 ========
+V0
 - Create and Manage referral programs
 - Manage referral program members
   - Support to generate unique referral code for each program member
 - Manage member referrals
+
+Future releases
+---------------
+V1
+- Program reward rule configuration
+- Rewards API and worklfow support
+- Reward Payout preference and transaction support
+
+V2
+- Member stats support
+  - number of referral shares
+  - pending referrals
+  - approved referrals
+  - rewards
 
 Getting Started
 ===============
