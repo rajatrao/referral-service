@@ -85,8 +85,9 @@ go build referral-service
 
 
 Usage
+=====
 
-This service exposes gRPC and http methods for referral management. See API documentation for details on available routes and response formats
+This service exposes gRPC and http methods for referral management. See below API documentation for details on available routes and response formats
 Http calls are forwarded to gRPC methods for execution.
 
 > The project uses the Go Clean Architecture approach to ensure well-structured, maintainable, and testable code. 
