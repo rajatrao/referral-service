@@ -20,7 +20,8 @@ V0
 - Manage referral program members
   - Support to generate unique referral code for each program member
 - Manage member referrals
-
+- Added infra support for gRPC and http endpoints
+  
 Future releases
 ---------------
 V1
