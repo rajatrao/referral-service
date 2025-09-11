@@ -8,7 +8,7 @@ import (
 )
 
 var Module = fx.Module(
-	"app base and gateways",
+	"app base",
 	logger.Module,
 	config.Module,
 )
