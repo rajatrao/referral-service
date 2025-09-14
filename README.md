@@ -3,6 +3,10 @@
 A microservice designed to manage referral program, program membership and member referrals.
 Generate and validate referral codes to track referral progress.
 
+# Motivation
+
+When business wants to increase user base and revenue, referral channel is one of the most effective user acquisition and activation medium. In order to build a workflow around referral we need an efficient way to manage and track referrals for reward payouts and attribution.
+
 ## Business Use case
 
 - Use the program apis to create referral program say for your new product
