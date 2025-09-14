@@ -34,11 +34,13 @@ type Params struct {
 func New(p Params) (Repository, error) {
 
 	cfg := p.Cfg
+
 	connStr := fmt.Sprintf(
-		"user=%s dbname=%s password=%s sslmode=disable",
+		"user=%s dbname=%s password=%s host=%s port=5432 sslmode=disable",
 		cfg.Get("postgres.user").String(),
 		cfg.Get("postgres.db_name").String(),
 		cfg.Get("postgres.password").String(),
+		cfg.Get("postgres.host").String(),
 	)
 
 	p.Log.Info(connStr)

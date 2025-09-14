@@ -55,7 +55,7 @@ func New(p Params) (*Handlers, error) {
 	}
 	ln, err := net.Listen(
 		"tcp",
-		p.Cfg.Get("server.address").String(),
+		":5000",
 	)
 	if err != nil {
 		return nil, fmt.Errorf("grpc net listen %w", err)
@@ -78,7 +78,7 @@ func New(p Params) (*Handlers, error) {
 	// gRPC client connection for HTTP proxy.
 	conn, err := grpc.DialContext(
 		context.Background(),
-		p.Cfg.Get("server.address").String(),
+		":5000",
 		// grpc.WithBlock(),
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
 	)
@@ -99,7 +99,7 @@ func New(p Params) (*Handlers, error) {
 	}
 
 	gwServer := &http.Server{
-		Addr:    "127.0.0.1:8090",
+		Addr:    ":8090",
 		Handler: gwmux,
 	}
 
