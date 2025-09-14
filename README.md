@@ -1,10 +1,10 @@
-Referral Service App
-=========================
+# Referral Service App
+
 A microservice designed to manage referral program, program membership and member referrals.
 Generate and validate referral codes to track referral progress.
 
-Business Use case
-=================
+## Business Use case
+
 - Use the program apis to create referral program say for your new product
 - Enroll your partners as members to referral program
   - this generates a unique referral code for program member
@@ -13,8 +13,8 @@ Business Use case
   the program reward engine evaluates the action based on the configured program rules and triggers the reward workflow
 - As part of this workflow reward system will issue a payout to the member and referral based on their preference (ex. paypal transaction or tango card)
 
-Features
-========
+## Features
+
 V0
 - Create and Manage referral programs
 - Manage referral program members
@@ -22,8 +22,8 @@ V0
 - Manage member referrals
 - Added infra support for gRPC and http endpoints
   
-Future releases
----------------
+### Future releases
+
 V1
 - Program reward rule configuration
 - Rewards API and worklfow support
@@ -36,8 +36,7 @@ V2
   - approved referrals
   - rewards
 
-Getting Started
-===============
+## Getting Started
 
 Prerequisites
 - Go (v1.18 or later) — install from [official Go site]
@@ -54,20 +53,11 @@ Installation
 git clone https://github.com/rajatrao/referral-service.git
 cd referral-service
 ```
-2. Install dependecies
-```
-go get go.uber.org/fx@latest
-go get go.uber.org/zap@latest
-go get go.uber.org/config@latest
-go get github.com/grpc-ecosystem/grpc-gateway/v2/runtime
-go get database/sql
-go get github.com/jmoiron/sqlx
-go get github.com/google/uuid
-copy proto files for google apis
-```
-3. Configure environment
+
+2. Configure environment
   - Update ./config/*.yaml to add relevant configurations
-4. Proto file changed ?
+
+3. Proto file changed ?
 ```
 protoc --proto_path=proto/ --go_out=proto/referral/ \
      --go_opt=module=referral-service/proto/referral \
@@ -77,15 +67,17 @@ protoc --proto_path=proto/ --go_out=proto/referral/ \
     --grpc-gateway_opt=module=referral-service/proto/referral \
     ./proto/referral/referral.proto
 ```
+
 4. Run the service
+
+Docker compose builds the go app container and boostraps the postgres database
+
 ```
-go build referral-service
-./referral-service
+docker compose up --build
 ```
 
 
-Usage
-=====
+## Usage
 
 This service exposes gRPC and http methods for referral management. See below API documentation for details on available routes and response formats
 Http calls are forwarded to gRPC methods for execution.
@@ -285,8 +277,9 @@ Http calls are forwarded to gRPC methods for execution.
             }
          ```
 
-Data model
+## Data model
+
 ```
- - repository/schema.go
+ - db-init/schema.sql
 ```
 
